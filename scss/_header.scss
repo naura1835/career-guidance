@@ -1,0 +1,121 @@
+.header {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.5rem;
+
+    @include breakpoint-up("tablet-portrait-up") {
+      column-gap: 1.5rem;
+      align-items: center;
+    }
+
+    .logo {
+      flex: 1 0 80%;
+
+      @include breakpoint-up("tablet-portrait-up") {
+        order: 1;
+        flex: 1;
+      }
+    }
+
+    .header-menu {
+      position: relative;
+
+      @include breakpoint-up("tablet-portrait-up") {
+        order: 3;
+      }
+
+      .line {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background-color: $text-color;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform-origin: left;
+
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+        &:nth-child(2) {
+          width: 16px;
+        }
+      }
+    }
+
+    .search {
+      flex: 3;
+      background-color: $primary-color;
+      border-radius: 10px;
+      box-shadow: $border;
+      height: 50px;
+      display: flex;
+      padding: 16px 14px;
+
+      @include breakpoint-up("tablet-portrait-up") {
+        order: 2;
+        flex: unset;
+      }
+
+      [type="text"] {
+        background-color: transparent;
+        border: none;
+        flex: 1;
+      }
+
+      &__btn {
+        background-color: transparent;
+        border: none;
+        align-self: center;
+      }
+    }
+
+    .menu-list {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 9%;
+      right: 5%;
+      padding: 2rem 2rem 3rem;
+      background-color: rgba(127, 75, 246, 0.3);
+      border-radius: 10px;
+      box-shadow: $border;
+      backdrop-filter: blur(40px) brightness(80%) saturate(150%);
+      list-style-type: none;
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @include breakpoint-up("tablet-portrait-up") {
+        top: 13%;
+        right: 2%;
+      }
+
+      &__item {
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+.active .header-menu {
+  .line:nth-child(1) {
+    transform: rotate(40deg);
+  }
+
+  .line:nth-child(2) {
+    transform: scale(0);
+  }
+
+  .line:nth-child(3) {
+    transform: rotate(-40deg);
+  }
+}
+.active nav .menu-list {
+  visibility: visible;
+  opacity: 1;
+}
