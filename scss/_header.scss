@@ -60,12 +60,15 @@
       [type="text"] {
         background-color: transparent;
         border: none;
+        outline: none;
         flex: 1;
+        color: $text-color;
       }
 
       &__btn {
         background-color: transparent;
         border: none;
+        outline: none;
         align-self: center;
       }
     }
@@ -77,11 +80,12 @@
       top: 9%;
       right: 5%;
       padding: 2rem 2rem 3rem;
-      background-color: rgba(127, 75, 246, 0.3);
+      background-color: rgba(31, 31, 71, 0.6);
       border-radius: 10px;
       box-shadow: $border;
-      backdrop-filter: blur(40px) brightness(80%) saturate(150%);
+      backdrop-filter: blur(10px) brightness(80%) saturate(150%);
       list-style-type: none;
+      z-index: 1;
       transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
       @include breakpoint-up("tablet-portrait-up") {

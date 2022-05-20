@@ -1,9 +1,10 @@
 $breakpoints: (
+  "large-phones": "475px",
   "phones-only": "599px",
   "tablet-portrait-up": "600px",
   "tablet-landscape-up": "900px",
-  "desktop-up": "1200px",
-  //also min width and i might have to change to 1024px
+  "desktop-up": "1024px",
+  //1024px
   "big-desktop-up": "1800px",
 );
 

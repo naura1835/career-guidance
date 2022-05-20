@@ -6,33 +6,82 @@ html {
     font-size: 100%;
   }
 }
+
 *,
 *::after,
 *::before {
   box-sizing: inherit;
 }
+
 *,
 body {
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   color: $text-color;
   background-color: $bg-color;
-  padding: 2.5em 1.9em 0em;
-
-  @include breakpoint-up("tablet-portrait-up") {
-    padding: 1em 1.9em 0em;
-  }
+  overflow-x: hidden;
 }
+
 a {
   text-decoration: none;
   color: $text-color;
   cursor: pointer;
 }
+
 .btn {
   background: $accent-color;
   border-radius: 10px;
   padding: 1em 3.125em;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1300px;
+  padding: 1.2em;
+}
+
+h1 {
+  font-size: 2.125rem; //48px 60px
+
+  @include breakpoint-up(tablet-portrait-up) {
+    font-size: 3rem;
+  }
+
+  @include breakpoint-up(desktop-up) {
+    font-size: 3.75rem;
+  }
+}
+
+h2 {
+  font-size: 24px; //38px  40px
+
+  @include breakpoint-up(tablet-portrait-up) {
+    font-size: 40px;
+  }
+}
+
+h3 {
+  font-size: 20px; //24px
+
+  @include breakpoint-up(tablet-portrait-up) {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-size: 15px;
+  line-height: 30px;
+
+  @include breakpoint-up(tablet-portrait-up) {
+    font-size: 18px;
+  }
+}
+
+.caption-text {
+  font-size: 15px;
 }
