@@ -1,18 +1,18 @@
 .hero-section {
-  display: flex;
   flex-direction: column;
+  height: 555px;
   margin-top: 40px;
 
-  @include breakpoint-up(large-phones) {
+  @include breakpoint-up(phones-only) {
     flex-direction: row;
     height: 500px;
   }
 
   &__content {
-    display: flex;
+    // display: flex;
     flex-direction: column;
 
-    @include breakpoint-up(large-phones) {
+    @include breakpoint-up(phones-only) {
       flex: 1;
       align-self: center;
     }
@@ -38,13 +38,13 @@
       height: 100%;
     }
 
-    @include breakpoint-up(large-phones) {
+    @include breakpoint-up(phones-only) {
       flex-grow: 1;
       transform: scale(0.9);
       top: -100px;
     }
 
-    @include breakpoint-up(large-phones) {
+    @include breakpoint-up(phones-only) {
       transform: scale(1);
     }
 
@@ -95,9 +95,9 @@
     .mechatronics {
       position: absolute;
       top: 370px;
-      right: 140px;
+      right: 180px;
       max-width: 100%;
-      width: 170px;
+      width: 200px;
       transition: all 1s linear;
 
       &:hover {
@@ -111,7 +111,7 @@
       top: 400px;
       right: -40px;
       max-width: 100%;
-      width: 170px;
+      width: 200px;
       transition: all 1s linear;
 
       &:hover {

@@ -1,0 +1,60 @@
+.mission {
+  flex-direction: column;
+
+  @include breakpoint-up(tablet-landscape-up) {
+    flex-direction: row;
+    column-gap: 4.3rem;
+    flex-wrap: wrap;
+  }
+
+  .mission__title {
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    flex: 1 100%;
+  }
+
+  &__content {
+    flex: 1;
+    margin-bottom: 2.5rem;
+  }
+
+  &__list {
+    list-style-type: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.875rem;
+
+    &__item {
+      background-color: $primary-color;
+      border-radius: 10px;
+      box-shadow: inset 0.5px 0.5px $secondary-color,
+        inset -0.5px -0.5px $secondary-color;
+      padding-top: 1.8em;
+
+      .number {
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background-color: $secondary-color;
+        width: 34px;
+        max-width: 100%;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1.25rem;
+
+        @include breakpoint-up(tablet-landscape-up) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      div {
+        h3 {
+          margin-bottom: 0.625rem;
+        }
+      }
+    }
+  }
+}
