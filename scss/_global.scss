@@ -45,6 +45,10 @@ a {
   padding: 1.2em;
 }
 
+.flex {
+  display: flex;
+}
+
 h1 {
   font-size: 2.125rem; //48px 60px
 
@@ -59,6 +63,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem; //38px  40px
+  margin-bottom: 1.4rem;
 
   @include breakpoint-up(tablet-portrait-up) {
     font-size: 2.375rem;
@@ -86,11 +91,8 @@ p {
 }
 
 .caption-text {
-  font-size: 15px;
+  font-size: 12px;
 }
 .body-intro-text {
   font-size: 18px;
-}
-.flex {
-  display: flex;
 }

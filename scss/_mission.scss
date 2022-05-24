@@ -3,13 +3,16 @@
 
   @include breakpoint-up(tablet-landscape-up) {
     flex-direction: row;
-    column-gap: 4.3rem;
+    column-gap: 3rem;
     flex-wrap: wrap;
+  }
+
+  @include breakpoint-up(desktop-up) {
+    column-gap: 4.3rem;
   }
 
   .mission__title {
     text-transform: uppercase;
-    margin-bottom: 1.4rem;
     flex: 1 100%;
   }
 
@@ -50,7 +53,7 @@
         }
       }
 
-      div {
+      .mission {
         h3 {
           margin-bottom: 0.625rem;
         }
