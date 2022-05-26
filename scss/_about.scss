@@ -10,6 +10,8 @@
   }
 
   .about__paragraph {
+    text-align: justify;
+
     &:not(:last-child) {
       margin-bottom: 1.875rem;
     }
