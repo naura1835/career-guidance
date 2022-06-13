@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Guidance</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="progress"></div>
+    <header class="header container">
+      <nav class="flex">
+        <a href="#" class="logo">CAREER GUIDANCE</a>
+        <a href="#" class="header-menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </a>
+        <form class="search">
+          <input type="text" name="search" placeholder="Search course..." />
+          <button class="search__btn">
+            <img src="/asset/ei_search.svg" alt="search icon" />
+          </button>
+        </form>
+
+        <ul class="menu-list">
+          <li class="menu-list__item"><a href="#">About</a></li>
+          <li class="menu-list__item"><a href="#">Results</a></li>
+          <li class="menu-list__item"><a href="#">Careers</a></li>
+          <li class="menu-list__item"><a href="#">Take test</a></li>
+          <li class="menu-list__item desktop-search">
+            <input type="text" name="search" placeholder="Search course..." />
+            <img src="/asset/ei_search.svg" alt="search icon" />
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="assessment container flex">
+      <aside class="assessment__info flex">
+        <h2>Take the test and get matched</h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the
+          readable ore-or-less normal distribution of letters,
+        </p>
+        <div class="progress__path">
+          <div class="progress__path__lines">
+            <div class="circle">1</div>
+            <div class="line"><span class="filled-line"></span></div>
+          </div>
+          <p>Enter average grades</p>
+          <div class="progress__path__lines">
+            <div class="circle">2</div>
+            <div class="line"><span class="filled-line"></span></div>
+          </div>
+          <p>Take personality test</p>
+          <div class="progress__path__lines">
+            <div class="circle">3</div>
+          </div>
+          <p>Get matched</p>
+        </div>
+      </aside>
+      <section aria-labelledby="questions" class="assessment__item container">
+        <h2 aria-hidden="true" id="questions" class="h2--hidden">
+          Multiple choices Questions
+        </h2>
+        <p class="base">Rate your perfomance in...</p>
+        <p class="body-intro-text question"></p>
+        <ul class="radio-group">
+          <li class="radio-group__item flex">
+            <input type="radio" name="answer" id="option-1" value="very good" />
+            <label for="option-1">Very Good</label>
+          </li>
+          <li class="radio-group__item flex">
+            <input type="radio" name="answer" id="option-2" value="good" />
+            <label for="option-2">Good</label>
+          </li>
+          <li class="radio-group__item flex">
+            <input type="radio" name="answer" id="option-3" value="average" />
+            <label for="option-3">Average</label>
+          </li>
+          <li class="radio-group__item flex">
+            <input type="radio" name="answer" id="option-4" value="bad" />
+            <label for="option-4">Bad</label>
+          </li>
+          <li class="radio-group__item flex">
+            <input type="radio" name="answer" id="option-5" value="very bad" />
+            <label for="option-5">Very Bad</label>
+          </li>
+        </ul>
+        <div class="assessment__item__btns flex">
+          <div class="btn--previous">
+            <img
+              src="/asset/ant-design_arrow-left-outlined.svg"
+              alt="go back to previous question arrow"
+            />PREV
+          </div>
+          <button class="btn--next">
+            NEXT QUESTION
+            <img
+              src="/asset/akar-icons_arrow-right.svg"
+              alt="go to next question arrow"
+            />
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script type="module" src="/app/js/script.js"></script>
+  </body>
+</html>

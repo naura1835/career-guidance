@@ -1,6 +1,6 @@
-.guide {
-  flex-direction: column;
+@use "../util" as u;
 
+.guide {
   &__info__text {
     margin-bottom: 30px;
   }
@@ -9,9 +9,9 @@
     display: grid;
     grid-template-columns: 30px 1fr;
     column-gap: 10px;
-    row-gap: 20px;
+    // row-gap: 20px;
 
-    @include breakpoint-up(tablet-landscape-up) {
+    @include u.breakpoint-up(tablet-landscape-up) {
       grid-template-columns: 1fr 30px 1fr;
     }
 
@@ -19,14 +19,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      row-gap: 20px;
+      // row-gap: 20px;
 
       &:first-child {
         display: none;
       }
 
-      @include breakpoint-up(tablet-landscape-up) {
-        row-gap: 10px;
+      @include u.breakpoint-up(tablet-landscape-up) {
+        // row-gap: 10px;
         grid-column: 2/3;
 
         &:first-child {
@@ -38,30 +38,14 @@
           }
         }
       }
-
-      .circle {
-        height: 24px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        border: 2px solid $text-color;
-      }
-
-      .line {
-        border: 1px solid $text-color;
-        flex-grow: 1;
-        width: 0;
-      }
     }
 
-    &__info {
-      background-color: $primary-color;
-      border-radius: 10px;
-      box-shadow: inset 0.5px 0.5px $secondary-color,
-        inset -0.5px -0.5px $secondary-color;
-      padding: 1.8em;
-      height: fit-content;
+    .card {
+      &:not(&:nth-of-type(3)) {
+        margin-bottom: 2em;
+      }
 
-      @include breakpoint-up(tablet-landscape-up) {
+      @include u.breakpoint-up(tablet-landscape-up) {
         // background-color: aqua;
         &:nth-of-type(1) {
           grid-column: 1/2;
