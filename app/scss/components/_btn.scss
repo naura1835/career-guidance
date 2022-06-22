@@ -52,15 +52,8 @@
 
 .btn--previous {
   width: auto;
-  // height: 40px;
-  // border-radius: 10px;
-  // outline: none;
-  // border: none;
-  // padding: 0;
-  // background-color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
-  // display: none;
   font-size: 15px;
 }
 .btn--next {
@@ -73,4 +66,13 @@
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0 1em;
   width: auto;
+}
+.btn--get-results {
+  display: none;
+  align-items: center;
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
+  padding: 1em;
+  background-color: var(--secondary-color);
 }
