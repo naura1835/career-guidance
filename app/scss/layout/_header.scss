@@ -51,12 +51,47 @@
 
     .search {
       flex: 3;
-      background-color: var(--primary-color);
-      border-radius: 10px;
-      box-shadow: var(--border);
-      height: 50px;
-      display: flex;
-      padding: 16px 14px;
+      width: 100%;
+
+      &__input {
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        box-shadow: var(--border);
+        height: 50px;
+        display: flex;
+        padding: 16px 14px;
+        position: relative;
+      }
+
+      &__result {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 10px 2em;
+        height: 300px;
+        background-color: var(--primary-color);
+        border-radius: 10px;
+        box-shadow: var(--border);
+        padding: 16px 14px;
+        overflow-y: scroll;
+        z-index: 1;
+
+        li {
+          padding: 1rem 14px;
+          // width: 98%;
+        }
+
+        li:not(:last-child) {
+          box-shadow: inset 0px -0.5px rgba(237, 246, 249, 0.5);
+        }
+      }
+
+      // background-color: var(--primary-color);
+      // border-radius: 10px;
+      // box-shadow: var(--border);
+      // height: 50px;
+      // display: flex;
+      // padding: 16px 14px;
 
       @include u.breakpoint-up("tablet-landscape-up") {
         flex: unset;
@@ -88,7 +123,11 @@
       top: 9%;
       right: 5%;
       padding: 2rem 2rem;
-      background-color: rgba(31, 31, 71, 0.6);
+      background: linear-gradient(
+        180deg,
+        rgba(225, 223, 240, 0.27) 0%,
+        rgba(177, 176, 185, 0.24) 100%
+      );
       border-radius: 10px;
       box-shadow: var(--border);
       backdrop-filter: blur(10px) brightness(80%) saturate(150%);
@@ -107,7 +146,7 @@
         opacity: 1;
         display: flex;
         flex-direction: row;
-        background-color: var(--primary-color);
+        background: var(--primary-color);
         border-radius: 30px;
         backdrop-filter: unset;
         box-shadow: none;

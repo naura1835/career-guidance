@@ -9,6 +9,8 @@ const previousQuestionBtn = document.querySelector(".btn--previous");
 const nextQuestionBtn = document.querySelector(".btn--next");
 const getResultBtn = document.querySelector(".btn--get-results");
 
+const label = document.querySelectorAll("label");
+
 let assessmentAnswers = [];
 let questionNumber = 0;
 let questions = subjectQuestions; //changed
@@ -34,6 +36,21 @@ function renderQuestion() {
     questions = shuffleFisherYates(personalityQuestions);
     questionNumber = 0;
     assessmentAnswers = [];
+    [
+      label[0].innerText,
+      label[1].innerText,
+      label[2].innerText,
+      label[3].innerText,
+      label[4].innerText,
+    ] = [
+      "very accurate",
+      "accurate",
+      "neutral",
+      "moderately inaccurate",
+      "very inaccurate",
+    ];
+
+    [];
   }
   if (assessmentAnswers.length == 40) {
     localStorage.setItem("personality-type", JSON.stringify(assessmentAnswers));
@@ -148,3 +165,4 @@ function shuffleFisherYates(array) {
   }
   return array;
 }
+//very accurate, accurate, neutral, moderately inaccurate, very inaccurate
