@@ -9,7 +9,9 @@ hamburgerMenu.addEventListener("click", toggleMenu);
 searchBtn.addEventListener("click", toggleSearchBar);
 window.addEventListener("scroll", debounce(showPath));
 window.addEventListener("scroll", debounce(showLine));
-search.addEventListener("input", debounce(searchCourse, 500));
+search.addEventListener("input", debounce(searchCourse, 300));
+searchBar.addEventListener("input", debounce(searchCourse, 300));
+
 //toggle desktop version search
 function toggleSearchBar() {
   setTimeout(() => {
@@ -55,28 +57,64 @@ function toggleMenu() {
 }
 
 async function searchCourse(e) {
-  const searchResultDiv = document.querySelector(".search__result");
+  const searchResultDiv =
+    window.innerWidth < 900
+      ? document.querySelector(".search__result")
+      : document.querySelector(".search__result--desktop");
 
-  const response = await fetch(
-    "https://career-guidance-api.herokuapp.com/api/courses/search",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ course: e.target.value }),
+  let courses = [];
+
+  if (e.target.value == 0) {
+    return (searchResultDiv.style.display = "none");
+  }
+
+  searchResultDiv.style.display = "block";
+
+  try {
+    displayLoading(searchResultDiv);
+
+    const response = await fetch(
+      "https://career-guidance-api.herokuapp.com/api/courses/search",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ course: e.target.value }),
+      }
+    );
+
+    courses = await response.json();
+
+    hideLoading(searchResultDiv);
+
+    if (courses.length != 0) {
+      const courseList = courses.map(
+        ({ name, description }) =>
+          `<li class="search__result__item">
+          <span class="search__result__item__title">${name}</span>
+          <span class="search__result__item__description">
+            ${description.split(" ").splice(0, 20).join(" ").concat("...")}
+            </span>
+        </li>`
+      );
+
+      searchResultDiv.innerHTML = courseList.join("");
+    } else {
+      searchResultDiv.innerHTML = `<span class="search__result__no-match">Oops looks like there is no match</span>`;
     }
-  );
-  const courses = await response.json();
-  const courseList = courses.map(
-    ({ name, description }) =>
-      `<li>
-        <span>${name}</span>
-        <span>${description.slice(0, 30)}</span>
-      </li>`
-  );
-  searchResultDiv.innerHTML = courseList.join("");
-  // return data;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+function displayLoading(element) {
+  const loadingDiv = `<li class="loading"></li>`;
+
+  element.innerHTML = loadingDiv;
+}
+function hideLoading(element) {
+  element.innerHTML = "";
 }
 
 // function searchCourse(e) {
