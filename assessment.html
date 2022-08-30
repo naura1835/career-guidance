@@ -13,33 +13,42 @@
   </head>
   <body>
     <div class="progress"></div>
-    <header class="header container">
+    <header class="header">
       <nav class="flex">
-        <a href="#" class="logo">CAREER GUIDANCE</a>
+        <a href="/" class="logo">CAREER GUIDANCE</a>
         <a href="#" class="header-menu">
           <span class="line"></span>
           <span class="line"></span>
           <span class="line"></span>
         </a>
         <form class="search">
-          <input type="text" name="search" placeholder="Search course..." />
-          <button class="search__btn">
-            <img src="/asset/ei_search.svg" alt="search icon" />
-          </button>
+          <div class="search__input">
+            <input type="text" name="search" placeholder="Search course..." />
+            <button class="search__btn">
+              <img src="./asset/ei_search.svg" alt="search icon" />
+            </button>
+          </div>
+          <ul class="search__result list"></ul>
         </form>
 
         <ul class="menu-list">
           <li class="menu-list__item"><a href="#">About</a></li>
           <li class="menu-list__item"><a href="#">Results</a></li>
           <li class="menu-list__item"><a href="#">Careers</a></li>
-          <li class="menu-list__item"><a href="#">Take test</a></li>
+          <li class="menu-list__item">
+            <a>Take test</a>
+          </li>
           <li class="menu-list__item desktop-search">
             <input type="text" name="search" placeholder="Search course..." />
-            <img src="/asset/ei_search.svg" alt="search icon" />
+            <img src="./asset/ei_search.svg" alt="search icon" />
           </li>
         </ul>
       </nav>
+      <nav>
+        <ul class="search__result--desktop list"></ul>
+      </nav>
     </header>
+
     <main class="assessment container flex">
       <aside class="assessment__info flex">
         <h2>Take the test and get matched</h2>

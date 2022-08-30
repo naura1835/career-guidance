@@ -1,8 +1,7 @@
 const displayResult = document.querySelector(".anneyong");
 const subjectResultArray = JSON.parse(localStorage.getItem("subjects")) || [];
-const personalityTypeResult = JSON.parse(
-  localStorage.getItem("personality-type") || []
-);
+const personalityTypeResult =
+  JSON.parse(localStorage.getItem("personality-type")) || [];
 
 console.log(subjectResultArray);
 console.log(personalityTypeResult);
@@ -55,14 +54,14 @@ const data = {
   personality: "INTP",
 };
 
-console.log(data);
-
-fetch("https://career-guidance-api.herokuapp.com/api/courses/result", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(data),
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data));
+window.addEventListener("load", function (e) {
+  fetch("https://career-guidance-api.herokuapp.com/api/courses/result", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+});

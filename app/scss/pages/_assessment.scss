@@ -2,9 +2,10 @@
 
 .assessment {
   flex-direction: column;
+  align-items: center;
   margin-top: 30px;
 
-  @include u.breakpoint-up(tablet-portrait-up) {
+  @include u.breakpoint-up(tablet-landscape-up) {
     flex-direction: row;
     margin-top: 0px;
   }
@@ -21,14 +22,14 @@
       margin-bottom: 20px;
       text-transform: unset;
 
-      @include u.breakpoint-up(tablet-portrait-up) {
+      @include u.breakpoint-up(tablet-landscape-up) {
         text-align: unset;
       }
     }
     .progress__path {
       display: none;
 
-      @include u.breakpoint-up(tablet-portrait-up) {
+      @include u.breakpoint-up(tablet-landscape-up) {
         display: grid;
         grid-template-columns: auto 1fr;
         column-gap: 20px;

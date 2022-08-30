@@ -9,6 +9,7 @@
     box-shadow: var(--border-secondary-color);
     margin-bottom: 30px;
     padding: 1em;
+    margin-inline: auto;
 
     &:hover {
       background-color: var(--secondary-color);
