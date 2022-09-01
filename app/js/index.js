@@ -1,3 +1,5 @@
+// import { debounce } from "./util.js";
+
 const hamburgerMenu = document.querySelector(".header-menu");
 const circles = document.querySelectorAll(".guide .circle");
 const pathLines = document.querySelectorAll(".guide .line");
@@ -64,7 +66,7 @@ async function searchCourse(e) {
 
   let courses = [];
 
-  if (e.target.value == 0) {
+  if (e.target.value.length == 0) {
     return (searchResultDiv.style.display = "none");
   }
 

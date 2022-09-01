@@ -34,6 +34,7 @@
       box-shadow: var(--border);
       border-radius: 10px;
       max-width: 300px;
+      width: 100%;
       height: 50px;
       padding: 0 20px;
 
@@ -53,12 +54,13 @@
   }
 }
 
-.all-course-list {
+.all-courses-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   row-gap: 40px;
   column-gap: 40px;
   place-items: center;
+  min-height: 100px;
 
   &__course {
     border-radius: 10px;
